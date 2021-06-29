@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 ///const puerto=3007;
 var config = {
     server: "127.0.0.1",
-    port: 3030
+    port: 3032
 };
 var connection = mysql.createConnection({
     host: '127.0.0.1',
@@ -56,6 +56,17 @@ app.get("/citaspaciente/:rut", bodyParser.json(), function (req, res) {
     connection.query("select * from citas where paciente=?", rut, function (req1, resultados) {
         console.log(resultados);
         res.status(200).send(resultados);
+    });
+});
+app.get("/medico/:rut", bodyParser.json(), function (req, res) {
+    var rut = req.params.rut;
+    connection.query("select * from medicos where rutmedico=?", rut, function (error, resultados, fields) {
+        if (error) {
+            throw (error);
+        }
+        else {
+            res.status(200).send(resultados);
+        }
     });
 });
 app.get("/pacientes/:rut", function (req, res) {

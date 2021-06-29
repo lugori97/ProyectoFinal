@@ -5,3 +5,4 @@ export interface Medicos {
     correo:string;
     especialidad:string;
 }
+export const ListaMedicos:Array<Medicos> = [ ];

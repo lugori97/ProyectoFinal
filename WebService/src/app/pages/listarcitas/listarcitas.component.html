@@ -1,18 +1,20 @@
 <div id= "listacitas">
-    <ul class="list" *ngFor="let item of citas">
+    <ul class="list" *ngFor="let item of citas; let i = index" >
         
         <li class="list-item" *ngIf="item.estado == 'abierta' || item.estado == 'asignada'" > 
             <div class="card text-white bg-success mb-3" [routerLink]="['/../reprogramarcita',item.id]" routerLinkActive="router-link-active" style="max-width: 18rem;" >
                 <div class="card-header" >Cita Paciente RUT {{item.paciente}}</div>
                 <div class="card-body">
                     <h5 class="card-title">Estado:{{item.estado}}</h5>
-                    <h5 class="card-title">Medico:{{item.estado}}</h5>
-                    <h5 class="card-title">Fecha:{{item.estado}}</h5>
-                    <h5 class="card-title">Hora:{{item.estado}}</h5>
+                    <h5 class="card-title">Medico:{{nombremedico[i]}}</h5>
+                    <h5 class="card-title">Especialidad:{{especialidad[i]}}</h5>
+                    <h5 class="card-title">Fecha:{{fecha[i]}}</h5>
+                    <h5 class="card-title">Hora:{{item.hora}}</h5>
+                    <h5 class="card-title">Contacto:{{correomedico[i]}}</h5>
                      <p class="card-text">{{item.descripcion}}</p>
            <!--    <a (click)="editar(item.id)" class="btn btn-primary">Go somewhere</a> -->
                 </div>
-            <div><button type="button" class="btn btn-danger" (click)="EliminarCita(item)">Cancelar Cita</button></div>
+            <div><button type="button" class="btn btn-danger" (click)="CancelarCita(item)">Cancelar Cita</button></div>
         </div></li>
     </ul>
 </div>

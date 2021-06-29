@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class ConexionBDService {
 
-    servidor = "http://127.0.0.1:3030";
+    servidor = "http://127.0.0.1:3032";
 
   constructor(private servicio:HttpClient) {}
 
@@ -36,6 +36,9 @@ export class ConexionBDService {
    ConsultarCitasPaciente(rut:string):Observable<any>{
     return this.servicio.get(`${this.servidor}/citaspaciente/${rut}`);
     };
+    ConsultarMedico(rut:string):Observable<any>{
+      return this.servicio.get(`${this.servidor}/medico/${rut}`);
+      };
     ReprogramarCita(fecha:string,hora:string,rut:string):Observable<any>{
       
       return this.servicio.put(`${this.servidor}/reprogramarcita`,JSON.stringify([fecha,hora,rut]),httpOptions);
