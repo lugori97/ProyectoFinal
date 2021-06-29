@@ -1,0 +1,14 @@
+<div id="contenedor" >
+    <ul class="list" *ngFor="let item of pacientes">
+            
+        <div class="card-header" >{{item.nombres}} {{item.apellidos}}  </div>
+            <div class="card-body">
+                <h5 class="card-title">{{item.rut}}</h5>
+                <p class="card-text">{{item.region}} <br> {{item.comuna}} <br> {{item.direccion}}</p>
+               <!--    <a (click)="editar(item.id)" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        
+
+    </ul>
+</div>
+    

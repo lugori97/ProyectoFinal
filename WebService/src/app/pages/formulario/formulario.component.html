@@ -1,0 +1,57 @@
+<form [formGroup]="formulario" (ngSubmit)="crearPaciente()" >
+    <ul>
+        <li>
+            <label for="rut" style="padding-right: 10%" >rut</label>
+            <br>
+            <input formControlName="rut" type="text" required >
+        </li>
+         <br>
+         <li>
+            <label for="nombres" style="padding-right: 10%" >Nombres</label>
+            <br>
+            <input formControlName="nombres" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="apellidos" style="padding-right: 10%" >Apellidos</label>
+            <br>
+            <input formControlName="apellidos" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="region" style="padding-right: 10%" >Region</label>
+            <br>
+            <input formControlName="region" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="comuna" style="padding-right: 10%" >Comuna</label>
+            <br>
+            <input formControlName="comuna" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="direccion" style="padding-right: 10%" >Direccion</label>
+            <br>
+            <input formControlName="direccion" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="correo" style="padding-right: 10%" >Correo</label>
+            <br>
+            <input formControlName="correo" type="text" required >
+        </li>
+        <br>
+        <li>
+            <label for="contra" style="padding-right: 10%" >Contraseña</label>
+            <br>
+            <input formControlName="contra" type="text" required >
+        </li>
+        <br>
+        <li>
+           
+            <button type="submit" id="actualizar" > Actualizar</button>
+            
+        </li>
+    </ul>
+</form>

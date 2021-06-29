@@ -1,0 +1,21 @@
+<form [formGroup]="formulario" (ngSubmit)="Login()" >
+    <ul>
+        <li>
+            <label for="correo" style="padding-right: 10%" >correo</label>
+            <br>
+            <input formControlName="correo" type="text" required >
+        </li>
+         <br>
+         <li>
+            <label for="contraseña" style="padding-right: 10%" >Contraseña</label>
+            <br>
+            <input formControlName="contra" type="text" required >
+        </li>
+        <br>
+        <li>
+           
+            <button type="submit" [disabled]="formulario.invalid" id="actualizar" > Iniciar Sesion</button>
+            {{mensaje}}
+        </li>
+    </ul>
+</form>
